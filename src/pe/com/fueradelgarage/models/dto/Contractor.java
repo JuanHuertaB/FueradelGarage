@@ -1,20 +1,23 @@
-package pe.com.fueradelgarage.models;
+package pe.com.fueradelgarage.models.dto;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Contractor {
     private String id;
-    private String user;
+    private String userName;
     private String password;
-    private String name;
+    private String firstName;
     private String lastName;
     private String description;
     private Integer score;
     private String videoUrl;
 
-    public Contractor(String id, String user, String password, String name, String lastName, String description, Integer score, String videoUrl) {
+    public Contractor(String id, String userName, String password, String firstName, String lastName, String description, Integer score, String videoUrl) {
         this.id = id;
-        this.user = user;
+        this.userName = userName;
         this.password = password;
-        this.name = name;
+        this.firstName = firstName;
         this.lastName = lastName;
         this.description = description;
         this.score = score;
@@ -30,12 +33,12 @@ public class Contractor {
         return this;
     }
 
-    public String getUser() {
-        return user;
+    public String getUserName() {
+        return userName;
     }
 
-    public Contractor setUser(String user) {
-        this.user = user;
+    public Contractor setUserName(String userName) {
+        this.userName = userName;
         return this;
     }
 
@@ -48,12 +51,12 @@ public class Contractor {
         return this;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public Contractor setName(String name) {
-        this.name = name;
+    public Contractor setFirstName(String firstName) {
+        this.firstName = firstName;
         return this;
     }
 
@@ -92,4 +95,22 @@ public class Contractor {
         this.videoUrl = videoUrl;
         return this;
     }
+
+    public static Contractor from(ResultSet rs){
+        //Contractor contractor = new Contractor();
+        try {
+            return new Contractor(rs.getString("id"),
+                     rs.getString("userName"),
+                     rs.getString("password"),
+                     rs.getString("first_name"),
+                     rs.getString("last_name"),
+                     rs.getString("description"),
+                     rs.getInt("score"),
+                     rs.getString("videoUrl"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }

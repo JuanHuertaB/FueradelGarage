@@ -1,4 +1,4 @@
-package pe.com.fueradelgarage.models;
+package pe.com.fueradelgarage.models.dao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
