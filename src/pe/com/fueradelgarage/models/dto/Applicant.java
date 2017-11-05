@@ -1,67 +1,41 @@
 package pe.com.fueradelgarage.models.dto;
 
+import pe.com.fueradelgarage.models.dao.UsersEntity;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Applicant {
-    private String id;
-    private String user;
-    private String password;
-    private String description;
-    private int score;
+    private int id;
+    private String name;
     private String videoUrl;
+    private User user;
 
-    public Applicant(String id, String user, String password, String description, int score, String videoUrl) {
-        this.id = id;
-        this.user = user;
-        this.password = password;
-        this.description = description;
-        this.score = score;
-        this.videoUrl = videoUrl;
+    public Applicant() {
     }
 
-    public String getId() {
+    public Applicant(int id, String name, String videoUrl, User user) {
+        this.id = id;
+        this.name = name;
+        this.videoUrl = videoUrl;
+        this.user = user;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public Applicant setId(String id) {
+    public Applicant setId(int id) {
         this.id = id;
         return this;
     }
 
-    public String getUser() {
-        return user;
+    public String getName() {
+        return name;
     }
 
-    public Applicant setUser(String user) {
-        this.user = user;
-        return this;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public Applicant setPassword(String password) {
-        this.password = password;
-        return this;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public Applicant setDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public Applicant setScore(int score) {
-        this.score = score;
+    public Applicant setName(String name) {
+        this.name = name;
         return this;
     }
 
@@ -74,19 +48,25 @@ public class Applicant {
         return this;
     }
 
-    public static Applicant from(ResultSet rs){
+    public User getUser() {
+        return user;
+    }
 
+    public Applicant setUser(User user) {
+        this.user = user;
+        return this;
+    }
+
+    public static Applicant from(ResultSet rs, UsersEntity usersEntity){
+        Applicant applicant = new Applicant();
         try {
-            return  new Applicant(rs.getString("id"),
-                                  rs.getString("user"),
-                                  rs.getString("password"),
-                                  rs.getString("description"),
-                                  rs.getInt("score"),
-                                  rs.getString("videoUrl"));
+            return applicant.setId(rs.getInt("id_applicants"))
+                    .setName(rs.getString("name"))
+                    .setVideoUrl(rs.getString("video_url"))
+                    .setUser(usersEntity.findById(rs.getInt("id")));
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
     }
-
 }
