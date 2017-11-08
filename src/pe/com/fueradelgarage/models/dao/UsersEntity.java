@@ -2,6 +2,7 @@ package pe.com.fueradelgarage.models.dao;
 
 import pe.com.fueradelgarage.models.dto.User;
 
+import javax.swing.plaf.synth.Region;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -51,15 +52,36 @@ public class UsersEntity extends BaseEntity{
     public List<User> findAll(){
         return findByCriteria("");
     }
-    public boolean create(User user){
+
+    public User create(User user){
         return executeUpdate(String.format(
                 "INSERT INTO %s(id,user_name,password,description,score) VALUES (%d, '%s')",
-                getTableName(),user.getId(),user.getName(),user.getPassword(),user.getDescription(),user.getScore()));
+                getTableName(),user.getId(),user.getName(),user.getPassword(),user.getDescription(),user.getScore())) ?
+                user : null;
+
     }
 
-    public boolean create (int id, String name, String password, String description, int score){
+    private int getMaxId(){
+        String sql = "SELECT MAX(id) AS  max_id FROM users";
+        try {
+            ResultSet resultSet= getConnection()
+                    .createStatement()
+                    .executeQuery(sql);
+            return resultSet.next() ?
+                    resultSet.getInt("max_id"):0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+    public User create ( String name, String password, String description, int score){
+        return create(getMaxId()+1,name,password,description, score);
+    }
+
+    public User create (int id, String name, String password, String description, int score){
         return create(new User(id,name,password,description,score));
     }
+
     // El usuario no actualiza update score
     // user no update score
 
