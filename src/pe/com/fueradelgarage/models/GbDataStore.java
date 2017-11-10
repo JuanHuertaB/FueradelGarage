@@ -24,6 +24,11 @@ public class GbDataStore {
         return connection == null ? null: getUsersEntity().findAll();
     }
 
+    public User createUser(String name,String password,String description, int score) {
+        return connection == null ?
+                null :
+                getUsersEntity().create(name,password,description,score);
+    }
 
     public boolean updateUser(int id, String name,String password,String description) {
         return connection == null ?

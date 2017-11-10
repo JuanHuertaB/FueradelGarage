@@ -56,7 +56,18 @@ public class UsersController extends javax.servlet.http.HttpServlet {
 
         if(method.equals("POST")) {
             // Create Action
+            if(action.equals("create")) {
+                String name = request.getParameter("name");
+                String password = request.getParameter("password");
+                String description = request.getParameter("description");
+                int score = 100;
 
+                User user = service.createUser(name,password,description,score);
+
+                List<User> users = service.findAllUsers();
+                request.setAttribute("users", users);
+                url = "listUsers.jsp";
+            }
             if(action.equals("update")) {
                 int id = Integer.parseInt(request.getParameter("id"));
                 String name = request.getParameter("name");

@@ -48,6 +48,9 @@ public class GbService {
 
     public List<User> findAllUsers() { return dataStore.findAllUsers(); }
 
+    public User createUser(String name,String password,String description, int score) {
+        return dataStore.createUser(name,password,description,score);}
+
     public boolean updateUser(int id, String name, String password, String description) {
         return dataStore.updateUser(id, name,password,description);
     }
