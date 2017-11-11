@@ -60,7 +60,7 @@ public class UsersController extends javax.servlet.http.HttpServlet {
                 String name = request.getParameter("name");
                 String password = request.getParameter("password");
                 String description = request.getParameter("description");
-                int score = 100;
+                int score = 0;
 
                 User user = service.createUser(name,password,description,score);
 
