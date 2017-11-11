@@ -10,7 +10,7 @@ import java.util.List;
 
 @javax.servlet.annotation.WebServlet(name ="UsersController",urlPatterns = "/users")
 
-public class UsersController {
+public class UsersController extends javax.servlet.http.HttpServlet{
     Service service;
     String url;
     public UsersController(){
@@ -30,8 +30,8 @@ public class UsersController {
         if(method.equals("GET")) {
             // Index Action
             if(action.equals("index")) {
-                //List<User> users = service.findAllUsers();
-                //request.setAttribute("users", users);
+                List<User> users = service.findAllUsers();
+                request.setAttribute("users", users);
                 url = "listUsers.jsp";
             }
             if(action.equals("show")) {
