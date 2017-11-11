@@ -12,10 +12,12 @@
     <title>Product Information</title>
 </head>
 <body>
-    <h1>Product Information</h1>
-    <p>Product Name: <s:property value="name"/></p>
-    <p>Product Description: <s:property value="description"/></p>
-    <p>Product Price: <s:property value="price"/></p>
-    <p>Supplier Email: <s:property value="supplierEmail"/> </p>
+<h1>About User</h1>
+    <p>User Id: <c:out value="${user.id}"/> </p>
+    <p>User Name: <c:out value="${user.name}"/> </p>
+    <p>User Password <c:out value="${user.password}"/></p>
+    <p>User Description <c:out value="${user.description}"/></p>
+    <p>User Score<c:out value="${user.score}"/></p>
+    <p><a href="users?action=index">Users List</a> </p>
 </body>
 </html>

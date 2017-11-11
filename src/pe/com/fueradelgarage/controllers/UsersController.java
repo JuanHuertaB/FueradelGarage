@@ -52,6 +52,13 @@ public class UsersController extends javax.servlet.http.HttpServlet {
                 request.setAttribute("user", user);
                 url = "editUser.jsp";
             }
+            if(action.equals("delete")){
+                int id = Integer.parseInt(request.getParameter("id"));
+                boolean isErase = service.eraseUser(id);
+                List<User> users = service.findAllUsers();
+                request.setAttribute("users", users);
+                url = "listUsers.jsp";
+            }
         }
 
         if(method.equals("POST")) {
