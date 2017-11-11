@@ -10,7 +10,7 @@
             <result>index.jsp</result>
         </action>
         <action name="product" class="pe.com.fueradelgarage.actions.ProductAction">
-            <result name="success">showProduct.jsp</result>
+            <result name="success">showUser.jsp</result>
             <result name="input">index.jsp</result>
         </action>
     </package>
