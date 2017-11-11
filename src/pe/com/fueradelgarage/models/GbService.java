@@ -54,6 +54,8 @@ public class GbService {
     public boolean updateUser(int id, String name, String password, String description) {
         return dataStore.updateUser(id, name,password,description);
     }
+    public boolean eraseUser(int id) {
+        return dataStore.eraseUser(id); }
 }
 
 
