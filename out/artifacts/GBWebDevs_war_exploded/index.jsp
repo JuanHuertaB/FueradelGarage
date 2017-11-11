@@ -8,18 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-<<<<<<< HEAD
-    <title>Services</title>
-  </head>
-  <body>
-  <h1>Services</h1>
-  <p><a href="users?actions=index">Users List</a> </p>
-=======
     <title>GB Service</title>
   </head>
   <body>
     <h1>HR Service</h1>
     <p><a href="users?action=index">Users List</a></p>
->>>>>>> jhonatandev
   </body>
 </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+    <field name="name">
+        <field-validator type="requiredstring">
+            <message>A value for Product Name is required</message>
+        </field-validator>
+        <field-validator type="regex">
+            <param name="regexExpression">/^[A-Za-z]+$/</param>
+            <message>Product Name must include only Alphabet characters</message>
+        </field-validator>
+    </field>
+    <field name="supplierEmail">
+        <field-validator type="email">
+            <message>Please input a valid email address</message>
+        </field-validator>
+    </field>
+    <field name="price">
+        <field-validator type="double">
+            <param name="minInclusive">1.0</param>
+            <param name="maxInclusive">500.0</param>
+            <message>Unit Price must be between 1.0 and 500.0</message>
+        </field-validator>
+    </field>
+
+</validators>
