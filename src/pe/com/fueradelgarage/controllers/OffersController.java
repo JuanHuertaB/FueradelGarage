@@ -1,7 +1,7 @@
 package pe.com.fueradelgarage.controllers;
 
 import pe.com.fueradelgarage.models.GbService;
-import pe.com.fueradelgarage.models.User;
+import pe.com.fueradelgarage.models.Offer;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
