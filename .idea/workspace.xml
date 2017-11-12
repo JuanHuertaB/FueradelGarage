@@ -268,6 +268,13 @@
             <path>
               <item name="FueradelGarage" type="b2602c69:ProjectViewProjectNode" />
               <item name="FueradelGarage" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="fueradelgarage" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FueradelGarage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FueradelGarage" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -492,12 +499,12 @@
       <workItem from="1510430071926" duration="117000" />
       <workItem from="1510437701174" duration="4817000" />
       <workItem from="1510446935926" duration="1835000" />
-      <workItem from="1510452261025" duration="1777000" />
+      <workItem from="1510452261025" duration="1965000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23135000" />
+    <option name="totallyTimeSpent" value="23323000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
