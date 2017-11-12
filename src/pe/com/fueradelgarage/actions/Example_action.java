@@ -2,7 +2,7 @@ package pe.com.fueradelgarage.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class ProductAction extends ActionSupport {
+public class Example_action extends ActionSupport {
     private String name;
     private String description;
     private double price;
