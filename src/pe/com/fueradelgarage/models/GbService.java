@@ -56,6 +56,14 @@ public class GbService {
     }
     public boolean eraseUser(int id) {
         return dataStore.eraseUser(id); }
+
+    public List<Agreement> findAllAgreements() {
+        return null;
+    }
+
+    public Agreement findAgreementsById(int id) {
+        return null;
+    }
 }
 
 
