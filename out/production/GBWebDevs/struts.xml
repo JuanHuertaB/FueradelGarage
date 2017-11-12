@@ -13,7 +13,7 @@
             <result name="success">showUser.jsp</result>
             <result name="input">listUsers.jsp</result>
         </action>
-        <action name="user" class="pe.com.fueradelgarage.models.GbService">
+        <action name="user" class="pe.com.fueradelgarage.models.User">
             <result name="success">listUsers.jsp</result>
             <result name="show">showUser.jsp</result>
             <result name="new">newUser.jsp</result>

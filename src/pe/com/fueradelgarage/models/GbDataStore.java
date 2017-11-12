@@ -63,6 +63,25 @@ public class GbDataStore {
     }
 
 
+    public Event findEventById(int id) {
+        return null;
+    }
+
+    public List<Event> findAllEvents() {
+        return null;
+    }
+
+    public boolean eraseEvent() {
+        return false;
+    }
+
+    public Event createEvent(String name, String password, String description, int score) {
+            return null;
+    }
+
+    public boolean updateEvent(int id, String name, String password, String description) {
+        return false;
+    }
 }
 
 
