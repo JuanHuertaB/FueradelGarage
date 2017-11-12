@@ -1,9 +1,12 @@
 package pe.com.fueradelgarage.models;
+import com.opensymphony.xwork2.ActionSupport;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import
+ java.sql.SQLException;
 
-public class User {
+
+public class User extends ActionSupport {
 
     private int id;
     private String name;
@@ -79,5 +82,8 @@ public class User {
             e.printStackTrace();
         }
         return null;
+    }
+    public String execute() {
+        return SUCCESS;
     }
 }

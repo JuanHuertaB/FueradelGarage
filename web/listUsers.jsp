@@ -30,7 +30,9 @@
                 <td><c:out value="${user.description}"/></td>
                 <td><c:out value="${user.score}"/></td>
                 <td>
-
+                    <a href="users?action=show&id=${user.id}">Show</a>
+                    <a href="users?action=edit&id=${user.id}">Edit</a>
+                    <a href="users?action=delete&id=${user.id}">Delete</a>
                 </td>
             </tr>
 

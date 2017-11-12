@@ -13,7 +13,8 @@ public class UsersEntity extends BaseEntity{
         setTableName("users");
     }
 
-    public UsersEntity(Connection connection, String tableName ){
+    public UsersEntity(Connection connection, String tableName )
+    {
         super(connection, tableName);
     }
 
@@ -94,6 +95,11 @@ public class UsersEntity extends BaseEntity{
     public User create (int id, String name, String password, String description, int score){
         return create(new User(id,name,password,description,score));
     }
+
+
+
+
+
 
     // El usuario no actualiza update score
     // user no update score
