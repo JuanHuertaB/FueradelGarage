@@ -11,7 +11,12 @@
         </action>
         <action name="product" class="pe.com.fueradelgarage.actions.ProductAction">
             <result name="success">showProduct.jsp</result>
-            <result name="input">index.jsp</result>
+            <result name="input">login.jsp</result>
+        </action>
+        <!-- Login -->
+        <action name="login" class="pe.com.fueradelgarage.actions.LoginAction">
+            <result name="success">showProduct.jsp</result>
+            <result name="input">login.jsp</result>
         </action>
     </package>
 </struts>
