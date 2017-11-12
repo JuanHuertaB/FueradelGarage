@@ -10,16 +10,23 @@
             <result>index.jsp</result>
         </action>
         <action name="product" class="pe.com.fueradelgarage.actions.ProductAction">
-            <result name="success">showUser.jsp</result>
-            <result name="input">listUsers.jsp</result>
+            <result name="success">showProduct.jsp</result>
+            <result name="input">login.jsp</result>
         </action>
-        <action name="user" class="pe.com.fueradelgarage.models.GbService">
+<<<<<<< HEAD
+        <!-- Login -->
+        <action name="login" class="pe.com.fueradelgarage.actions.LoginAction">
+            <result name="success">showProduct.jsp</result>
+            <result name="input">login.jsp</result>
+=======
+        <action name="user" class="pe.com.fueradelgarage.models.User">
             <result name="success">listUsers.jsp</result>
             <result name="show">showUser.jsp</result>
             <result name="new">newUser.jsp</result>
             <result name="edit">editUser.jsp</result>
             <result name="delete">listUsers.jsp</result>
 
+>>>>>>> devjc
         </action>
     </package>
 </struts>
