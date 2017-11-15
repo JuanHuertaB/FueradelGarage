@@ -62,6 +62,7 @@ public class GbDataStore {
         return usersEntity;
     }
 
+<<<<<<< HEAD
 
     public Event findEventById(int id) {
         return null;
@@ -82,6 +83,8 @@ public class GbDataStore {
     public boolean updateEvent(int id, String name, String password, String description) {
         return false;
     }
+=======
+>>>>>>> jhonatandev
 }
 
 
