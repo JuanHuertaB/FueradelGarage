@@ -50,37 +50,7 @@ public class UsersEntity extends BaseEntity{
     public List<User> findAll(){
         return findByCriteria("");
     }
-/*
-    public User create(User user) {
-        return executeUpdate(String.format(
-                "INSERT INTO %s(id,user_name,password,description,score) VALUES (%d,'%s','%s','%s',%d)",
-                getTableName(),user.getId(),user.getName(),user.getPassword(),user.getDescription(),user.getScore()))?
-                user : null;
-    }
 
-    private int getMaxId() {
-        String sql = "SELECT MAX(id) AS max_id FROM users";
-        try {
-            ResultSet resultSet = getConnection()
-                    .createStatement()
-                    .executeQuery(sql);
-            return resultSet.next() ?
-                    resultSet.getInt("max_id") : 0;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return 0;
-    }
-
-    public User create(String name, String password, String description, int score) {
-
-        return create(getMaxId()+1, name);
-    }
-
-    public User create(int id, String name) {
-        return create(new Region(id, name));
-    }
-*/
     public User create(User user){
         return executeUpdate(String.format(
                 "INSERT INTO %s(user_name,password,description,score) VALUES ('%s','%s','%s',%d)",
@@ -95,11 +65,6 @@ public class UsersEntity extends BaseEntity{
     public User create (int id, String name, String password, String description, int score){
         return create(new User(id,name,password,description,score));
     }
-
-
-
-
-
 
     // El usuario no actualiza update score
     // user no update score

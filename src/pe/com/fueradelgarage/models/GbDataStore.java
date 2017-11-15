@@ -62,7 +62,6 @@ public class GbDataStore {
         return usersEntity;
     }
 
-
 }
 
 

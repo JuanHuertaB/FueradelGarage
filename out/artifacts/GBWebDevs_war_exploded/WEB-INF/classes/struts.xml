@@ -6,17 +6,14 @@
 
 <struts>
     <package name="default" extends="struts-default">
-        <action name="index">
-            <result>index.jsp</result>
+        <action name="registrar" class="pe.com.fueradelgarage.actions.UserAction">
+            <result name="success">salida.jsp</result>
         </action>
-        <action name="product" class="pe.com.fueradelgarage.actions.ProductAction">
-            <result name="success">showProduct.jsp</result>
-            <result name="input">login.jsp</result>
+        <action name="editar" class="pe.com.fueradelgarage.actions.UserAction" method="editar">
+            <result name="success">listUsers.jsp</result>
         </action>
-        <!-- Login -->
-        <action name="login" class="pe.com.fueradelgarage.actions.LoginAction">
-            <result name="success">showProduct.jsp</result>
-            <result name="input">login.jsp</result>
+        <action name="delete" class="pe.com.fueradelgarage.actions.UserAction" method="eliminar">
+            <result name="success">listUsers.jsp</result>
         </action>
     </package>
 </struts>
