@@ -55,6 +55,7 @@ public class GbService {
         return dataStore.updateUser(id, name,password,description);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     public boolean eraseUser(int id) {
         return dataStore.eraseUser(id); }
 
@@ -66,6 +67,8 @@ public class GbService {
         return null;
     }
 =======
+=======
+>>>>>>> Develop_new
     public boolean eraseUser(int id) { return dataStore.eraseUser(id); }
 
     public Event findEventById(int id ){return dataStore.findEventById(id);}
@@ -79,6 +82,16 @@ public class GbService {
 
     public boolean updateEvent(int id, String name, String password, String description) {
     return dataStore.updateEvent(id,name,password,description);}
+<<<<<<< HEAD
+>>>>>>> Develop_new
+=======
+=======
+
+    public boolean eraseUser(int id) {
+        return dataStore.eraseUser(id); }
+
+
+>>>>>>> jhonatandev
 >>>>>>> Develop_new
 }
 
