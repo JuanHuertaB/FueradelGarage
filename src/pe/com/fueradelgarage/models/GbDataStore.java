@@ -6,6 +6,7 @@ import java.util.List;
 public class GbDataStore {
     private Connection connection;
     private UsersEntity usersEntity;
+    private ContractorEntity contractorEntity;
 
 
     public GbDataStore(Connection connection) {
@@ -14,6 +15,16 @@ public class GbDataStore {
 
     public GbDataStore() {
     }
+
+    public Connection getConnection() {
+        return connection;
+    }
+
+    public void setConnection(Connection connection) {
+        this.connection = connection;
+    }
+
+    //USER
 
     public User findUserById(int id) {
         if(connection == null) return null;
@@ -46,14 +57,6 @@ public class GbDataStore {
                 getUsersEntity().erase(id);
     }
 
-    public Connection getConnection() {
-        return connection;
-    }
-
-    public void setConnection(Connection connection) {
-        this.connection = connection;
-    }
-
     private UsersEntity getUsersEntity() {
         if(usersEntity == null) {
             usersEntity = new UsersEntity();
@@ -62,6 +65,22 @@ public class GbDataStore {
         return usersEntity;
     }
 
+    //CONTRACTORS
+    private ContractorEntity getContractorEntity() {
+        if(contractorEntity == null) {
+            contractorEntity = new ContractorEntity();
+            contractorEntity.setConnection(connection);
+        }
+        return contractorEntity;
+    }
+
+    public Contractor findCountryById(int id) {
+        if(connection == null) return null;
+        return getContractorEntity().findById(id, getUsersEntity());
+    }
+
+    public List<Contractor> findAllContractor() {
+        return connection == null ? null : getContractorEntity().findAll(getUsersEntity()); }
 }
 
 

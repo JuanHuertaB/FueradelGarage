@@ -42,6 +42,7 @@ public class GbService {
         this.dataStore = dataStore;
     }
 
+    // SERVICE USER
     public User findUserById(int id) {
         return dataStore.findUserById(id);
     }
@@ -57,6 +58,9 @@ public class GbService {
 
     public boolean eraseUser(int id) {
         return dataStore.eraseUser(id); }
+
+// SERVICE CONTRACTOR
+
 
 
 }

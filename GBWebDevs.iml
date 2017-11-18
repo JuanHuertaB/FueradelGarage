@@ -32,5 +32,6 @@
     <orderEntry type="library" name="Struts 2-2.5.13" level="project" />
     <orderEntry type="library" exported="" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="library" name="struts2-bootstrap-plugin-2.5.2" level="project" />
+    <orderEntry type="library" name="bootstrap.jsp" level="project" />
   </component>
 </module>
