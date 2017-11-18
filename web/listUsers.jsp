@@ -25,7 +25,6 @@
 
         <jsp:useBean id="service" class="pe.com.fueradelgarage.models.GbService"/>
         <c:forEach var="user" items="${service.findAllUsers()}">
-    <!--c:forEach var="user" items="{service.findAllUsers()}">-->
 
             <tbody>
             <tr>
@@ -35,8 +34,7 @@
                 <td><c:out value="${user.description}"/></td>
                 <td><c:out value="${user.score}"/></td>
 
-                <!--<td class="center-align"><a cssClass="btn btn-primary" href="<s:url action="editar"><s:param name="user.id"><c:out value="${user.id}"/></s:param> </s:url>">Editar</a></td>-->
-                <td class="center-align"><a cssClass="btn btn-primary" href="editUser.jsp?user.id=<c:out value="${user.id}"/>"><button class="button-delete">Edit</button></a></td>
+                <td class="center-align"><a href="<s:url action="edit"><s:param name="user.id"><c:out value="${user.id}"/></s:param></s:url>" class="btn btn-sm btn-info">Editar</a></td>
                 <td class="center-align"><a cssClass="btn btn-primary" href="delete.action?user.id=<c:out value="${user.id}"/>"><button class="button-delete">Delete</button></a></td>
             </tr>
             </tbody>

@@ -10,6 +10,7 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="Struts 2-2.5.13" />
           <element id="library" level="project" name="struts2-bootstrap-plugin-2.5.2" />
+          <element id="library" level="project" name="bootstrap.jsp" />
         </element>
       </element>
     </root>
