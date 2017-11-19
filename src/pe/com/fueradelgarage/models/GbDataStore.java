@@ -65,8 +65,6 @@ public class GbDataStore {
         return usersEntity;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
     public Event findEventById(int id) {
         return null;
@@ -87,9 +85,7 @@ public class GbDataStore {
     public boolean updateEvent(int id, String name, String password, String description) {
         return false;
     }
-=======
->>>>>>> jhonatandev
-=======
+
     //CONTRACTORS
     private ContractorEntity getContractorEntity() {
         if(contractorEntity == null) {
@@ -106,7 +102,7 @@ public class GbDataStore {
 
     public List<Contractor> findAllContractor() {
         return connection == null ? null : getContractorEntity().findAll(getUsersEntity()); }
->>>>>>> jhonatandev
+
 }
 
 

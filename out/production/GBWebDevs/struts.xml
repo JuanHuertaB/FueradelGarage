@@ -15,25 +15,8 @@
         <action name="updateUser" class="pe.com.fueradelgarage.actions.UserAction" method="update">
             <result name="success">listUsers.jsp</result>
         </action>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <!-- Login -->
-        <action name="login" class="pe.com.fueradelgarage.actions.LoginAction">
-            <result name="success">showProduct.jsp</result>
-            <result name="input">login.jsp</result>
-=======
-        <action name="user" class="pe.com.fueradelgarage.models.User">
-            <result name="success">listUsers.jsp</result>
-            <result name="show">showUser.jsp</result>
-            <result name="new">newUser.jsp</result>
-            <result name="edit">editUser.jsp</result>
-            <result name="delete">listUsers.jsp</result>
-
->>>>>>> devjc
-=======
         <action name="delete" class="pe.com.fueradelgarage.actions.UserAction" method="eliminar">
             <result name="success">listUsers.jsp</result>
->>>>>>> jhonatandev
         </action>
     </package>
 </struts>
