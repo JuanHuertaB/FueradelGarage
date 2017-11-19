@@ -28,13 +28,22 @@ public class UserAction extends ActionSupport{
     }
 
     public String edit(){
-        GbService service = new GbService();
-        int userId =0;
-        user = service.findUserById(userId);
-        return ActionSupport.SUCCESS;
+        try {
+            GbService service = new GbService();
+            user = service.findUserById(user.getId());
+            int id = user.getId();
+            String name = user.getName();
+            String password = user.getPassword();
+            String description = user.getDescription();
+            int score = user.getScore();
+            return SUCCESS;
+        }catch (Exception e) {
+            e.printStackTrace();
+            return INPUT;
+        }
     }
 
-    public String editar(){
+    public String update(){
         try {
             GbService service = new GbService();
             service.updateUser(user.getId(),user.getName(),user.getPassword(),user.getDescription());
@@ -44,7 +53,6 @@ public class UserAction extends ActionSupport{
             return INPUT;
         }
     }
-
 
     public User getUser() {
         return user;
