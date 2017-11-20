@@ -5,39 +5,32 @@ import java.sql.SQLException;
 import java.util.Date;
 
 public class Event {
-    private int id;
-    private int idContractor;
+
+    private int idUser;
     private String nameEvent;
-    private Date startDate;
-    private Date endDate;
+    private Date start;
+    private Date end;
     private String place;
     private String description;
 
-    public Event(int id, int idContractor, String nameEvent, Date startDate, Date endDate, String place, String description) {
-        this.id = id;
-        this.idContractor = idContractor;
+    public Event() {
+    }
+
+    public Event(int idUser, String nameEvent, Date start, Date end, String place, String description) {
+        this.idUser = idUser;
         this.nameEvent = nameEvent;
-        this.startDate = startDate;
-        this.endDate = endDate;
+        this.start = start;
+        this.end = end;
         this.place = place;
         this.description = description;
     }
 
-    public int getId() {
-        return id;
+    public int getIdUser() {
+        return idUser;
     }
 
-    public Event setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    public int getIdContractor() {
-        return idContractor;
-    }
-
-    public Event setIdContractor(int idContractor) {
-        this.idContractor = idContractor;
+    public Event setIdUser(int idUser) {
+        this.idUser = idUser;
         return this;
     }
 
@@ -50,21 +43,21 @@ public class Event {
         return this;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public Date getStart() {
+        return start;
     }
 
-    public Event setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public Event setStart(Date start) {
+        this.start = start;
         return this;
     }
 
-    public Date getEndDate() {
-        return endDate;
+    public Date getEnd() {
+        return end;
     }
 
-    public Event setEndDate(Date endDate) {
-        this.endDate = endDate;
+    public Event setEnd(Date end) {
+        this.end = end;
         return this;
     }
 
@@ -86,12 +79,11 @@ public class Event {
         return this;
     }
 
-    public static Event from(ResultSet rs){
+    public static Event from(ResultSet rs) {
         try {
             return new Event(
-                    rs.getInt("id_events"),
-                    rs.getInt("id_contractor"),
-                    rs.getString("name_event"),
+                    rs.getInt("user_id"),
+                    rs.getString("name_events"),
                     rs.getDate("start_date"),
                     rs.getDate("end_date"),
                     rs.getString("place"),

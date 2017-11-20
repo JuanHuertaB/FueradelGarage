@@ -40,9 +40,12 @@
                     <thead>
 
                     <th>Id</th>
+                    <th>Nickname</th>
                     <th>Nombre</th>
+                    <th>Apellidos</th>
                     <th>Password</th>
                     <th>Descripción</th>
+                    <th>Video URL</th>
                     <th>Score</th>
                     <th>Edit</th>
                     <th>Delete</th>
@@ -56,8 +59,11 @@
                     <tr>
                         <td><c:out value="${user.id}"/></td>
                         <td><c:out value="${user.name}"/></td>
+                        <td><c:out value="${user.firstName}"/></td>
+                        <td><c:out value="${user.lastName}"/></td>
                         <td><c:out value="${user.password}"/></td>
                         <td><c:out value="${user.description}"/></td>
+                        <td><c:out value="${user.video}"/></td>
                         <td><c:out value="${user.score}"/></td>
 
                         <td><a href="<s:url action="edit"><s:param name="user.id"><c:out value="${user.id}"/></s:param></s:url>" class="btn btn-primary btn-xs">Editar</a></td>

@@ -53,29 +53,29 @@ public class UsersEntity extends BaseEntity{
 
     public User create(User user){
         return executeUpdate(String.format(
-                "INSERT INTO %s(user_name,password,description,score) VALUES ('%s','%s','%s',%d)",
-                getTableName(),user.getName(),user.getPassword(),user.getDescription(),user.getScore()))?
+                "INSERT INTO %s(user_name,first_name,last_name,password,description,video_url,score) VALUES ('%s','%s','%s','%s','%s','%s',%d)",
+                getTableName(),user.getName(),user.getFirstName(),user.getLastName(),user.getPassword(),user.getDescription(),user.getVideo(),user.getScore()))?
                 user : null;
     }
 
-    public User create (String name, String password, String description, int score){
-        return create(0, name,password,description,score);
+    public User create (String name,String firstName,String lastName, String password, String description,String video, int score){
+        return create(0, name,firstName,lastName,password,description,video,score);
     }
 
-    public User create (int id, String name, String password, String description, int score){
-        return create(new User(id,name,password,description,score));
+    public User create (int id, String name,String firstName,String lastName, String password, String description,String video, int score){
+        return create(new User(id,name,firstName,lastName,password,description,video,score));
     }
 
     // El usuario no actualiza update score
     // user no update score
 
-    public  boolean update(int id, String name, String password, String description){
+    public  boolean update(int id, String name,String firstName,String lastName, String password, String description,String video){
         return executeUpdate(String.format(
-                "UPDATE %s SET user_name = '%s', password = '%s', description = '%s' WHERE id = %d",getTableName(),name,password,description,id));
+                "UPDATE %s SET user_name = '%s',first_name = '%s',last_name = '%s', password = '%s', description = '%s',video_url = '%s' WHERE id = %d",getTableName(),name,firstName,lastName,password,description,video,id));
     }
 
     public boolean update(User user){
-        return update(user.getId(),user.getName(),user.getPassword(),user.getDescription());
+        return update(user.getId(),user.getName(),user.getFirstName(),user.getLastName(),user.getPassword(),user.getDescription(),user.getVideo());
     }
 
     public boolean erase(int id){
