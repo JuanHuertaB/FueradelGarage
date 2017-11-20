@@ -12,7 +12,7 @@ public class UserAction extends ActionSupport{
     public String execute(){
         GbService service = new GbService();
         int score = 0;
-         user = service.createUser(user.getName(),user.getPassword(),user.getDescription(),score);
+         user = service.createUser(user.getName(),user.getFirstName(),user.getLastName(),user.getPassword(),user.getDescription(),user.getVideo(),score);
         return SUCCESS;
     }
 
@@ -46,7 +46,7 @@ public class UserAction extends ActionSupport{
     public String update(){
         try {
             GbService service = new GbService();
-            service.updateUser(user.getId(),user.getName(),user.getPassword(),user.getDescription());
+            service.updateUser(user.getId(),user.getName(),user.getFirstName(),user.getLastName(),user.getPassword(),user.getDescription(),user.getVideo());
             return SUCCESS;
         }catch (Exception e){
             e.printStackTrace();

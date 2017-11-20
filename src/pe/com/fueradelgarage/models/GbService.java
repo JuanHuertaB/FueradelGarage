@@ -49,11 +49,11 @@ public class GbService {
 
     public List<User> findAllUsers() { return dataStore.findAllUsers(); }
 
-    public User createUser(String name,String password,String description, int score) {
-        return dataStore.createUser(name,password,description,score);}
+    public User createUser(String name,String firstName,String lastName,String password,String description,String video, int score) {
+        return dataStore.createUser(name,firstName,lastName,password,description,video,score);}
 
-    public boolean updateUser(int id, String name, String password, String description) {
-        return dataStore.updateUser(id, name,password,description);
+    public boolean updateUser(int id, String name,String firstName,String lastName, String password, String description,String video) {
+        return dataStore.updateUser(id, name,firstName,lastName,password,description,video);
     }
 <<<<<<< HEAD
 <<<<<<< HEAD

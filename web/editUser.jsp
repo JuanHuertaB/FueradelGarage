@@ -26,12 +26,25 @@
                             <fieldset>
                                 <input type="hidden" name="action" value="edit"/>
                                 <input type="hidden" name="user.id" value="${user.id}"/>
-                                <label for="name">Name</label>
+
+                                <label for="name">Nickname</label>
                                 <input type="text" name="user.name" id="name" value="${user.name}"/>
+
+                                <label for="name">Nombres</label>
+                                <input type="text" name="user.firstName" id="user.firstName" value="${user.firstName}"/>
+
+                                <label for="name">Apellidos</label>
+                                <input type="text" name="user.lastName" id="user.lastName" value="${user.lastName}"/>
+
                                 <label for="name">Password</label>
                                 <input type="text" name="user.password" id="user.password" value="${user.password}"/>
+
                                 <label for="name">Description</label>
                                 <input type="text" name="user.description" id="user.description" value="${user.description}"/>
+
+                                <label for="name">Video Url</label>
+                                <input type="text" name="user.video" id="user.video" value="${user.video}"/>
+
                                 <input type="submit"/>
 
                             </fieldset>

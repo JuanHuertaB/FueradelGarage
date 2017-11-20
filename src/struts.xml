@@ -7,7 +7,7 @@
 <struts>
     <package name="default" extends="struts-default">
         <action name="registrar" class="pe.com.fueradelgarage.actions.UserAction">
-            <result name="success">listUsers.jsp</result>
+            <result name="success">Prueba.jsp</result>
         </action>
         <action name="edit" class="pe.com.fueradelgarage.actions.UserAction" method="edit">
             <result name="success">editUser.jsp</result>
@@ -34,12 +34,16 @@
         <action name="editar" class="pe.com.fueradelgarage.actions.UserAction" method="editar">
 =======
         <action name="updateUser" class="pe.com.fueradelgarage.actions.UserAction" method="update">
+<<<<<<< HEAD
 >>>>>>> Develop_new
             <result name="success">listUsers.jsp</result>
+>>>>>>> Develop_new
+=======
+            <result name="success">Prueba.jsp</result>
 >>>>>>> Develop_new
         </action>
         <action name="delete" class="pe.com.fueradelgarage.actions.UserAction" method="eliminar">
-            <result name="success">listUsers.jsp</result>
+            <result name="success">Prueba.jsp</result>
         </action>
     </package>
 </struts>
