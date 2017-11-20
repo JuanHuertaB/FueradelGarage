@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="db_beater@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="db_beater">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="hr"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="sys"/>
+    <table id="8" parent="2" name="agreements"/>
+    <table id="9" parent="2" name="applicants"/>
+    <table id="10" parent="2" name="events"/>
+    <table id="11" parent="2" name="members"/>
+    <table id="12" parent="2" name="offers"/>
+    <table id="13" parent="2" name="rol"/>
+    <table id="14" parent="2" name="users"/>
+    <column id="15" parent="8" name="id_offers">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="8" name="id_applicants">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="8" name="state">
+      <Position>3</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="8" name="contractors_qualification">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="8" name="applicants_qualification">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="20" parent="8" name="fk_agreements_applicants1_idx">
+      <ColNames>id_applicants</ColNames>
+    </index>
+    <index id="21" parent="8" name="fk_agreements_offers1_idx">
+      <ColNames>id_offers</ColNames>
+    </index>
+    <foreign-key id="22" parent="8" name="fk_agreements_offers1">
+      <ColNames>id_offers</ColNames>
+      <RefSchemaName>db_beater</RefSchemaName>
+      <RefTableName>offers</RefTableName>
+      <RefColNames>id_offers</RefColNames>
+    </foreign-key>
+    <foreign-key id="23" parent="8" name="fk_agreements_applicants1">
+      <ColNames>id_applicants</ColNames>
+      <RefSchemaName>db_beater</RefSchemaName>
+      <RefTableName>applicants</RefTableName>
+      <RefColNames>id_applicants</RefColNames>
+    </foreign-key>
+    <column id="24" parent="9" name="id_applicants">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="25" parent="9" name="name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="9" name="video_url">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="27" parent="9" name="password">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="9" name="description">
+      <Position>5</Position>
+      <DataType>varchar(120)|0</DataType>
+    </column>
+    <column id="29" parent="9" name="rol_id">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="9" name="score">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="31" parent="9" name="fk_applicants_rol1_idx">
+      <ColNames>rol_id</ColNames>
+    </index>
+    <key id="32" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_applicants</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="33" parent="9" name="fk_applicants_rol1">
+      <ColNames>rol_id</ColNames>
+      <RefSchemaName>db_beater</RefSchemaName>
+      <RefTableName>rol</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="34" parent="10" name="id_events">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="35" parent="10" name="users_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="10" name="name_events">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="10" name="start_date">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="10" name="end_date">
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="10" name="place">
+      <Position>6</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="10" name="description">
+      <Position>7</Position>
+      <DataType>varchar(120)|0</DataType>
+    </column>
+    <index id="41" parent="10" name="fk_events_users1_idx">
+      <ColNames>users_id</ColNames>
+    </index>
+    <key id="42" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_events</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="43" parent="10" name="fk_events_users1">
+      <ColNames>users_id</ColNames>
+      <RefSchemaName>db_beater</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="44" parent="11" name="id_member">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="45" parent="11" name="id_applicants">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="11" name="name_me">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="11" name="position">
+      <Position>4</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <index id="48" parent="11" name="fk_members_applicants1_idx">
+      <ColNames>id_applicants</ColNames>
+    </index>
+    <key id="49" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_member</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="50" parent="11" name="fk_members_applicants1">
+      <ColNames>id_applicants</ColNames>
+      <RefSchemaName>db_beater</RefSchemaName>
+      <RefTableName>applicants</RefTableName>
+      <RefColNames>id_applicants</RefColNames>
+    </foreign-key>
+    <column id="51" parent="12" name="id_offers">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="52" parent="12" name="id_events">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="12" name="tittle">
+      <Position>3</Position>
+      <DataType>varchar(60)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="12" name="start_time">
+      <Position>4</Position>
+      <DataType>time(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="12" name="end_time">
+      <Position>5</Position>
+      <DataType>time(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="12" name="description">
+      <Position>6</Position>
+      <DataType>varchar(120)|0</DataType>
+    </column>
+    <index id="57" parent="12" name="fk_offers_events1_idx">
+      <ColNames>id_events</ColNames>
+    </index>
+    <key id="58" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_offers</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="59" parent="12" name="fk_offers_events1">
+      <ColNames>id_events</ColNames>
+      <RefSchemaName>db_beater</RefSchemaName>
+      <RefTableName>events</RefTableName>
+      <RefColNames>id_events</RefColNames>
+    </foreign-key>
+    <column id="60" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="61" parent="13" name="category">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="62" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="63" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="64" parent="14" name="user_name">
+      <Position>2</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="65" parent="14" name="first_name">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="14" name="last_name">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="14" name="password">
+      <Position>5</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="14" name="description">
+      <Position>6</Position>
+      <DataType>varchar(120)|0</DataType>
+    </column>
+    <column id="69" parent="14" name="video_url">
+      <Position>7</Position>
+      <DataType>varchar(120)|0</DataType>
+    </column>
+    <column id="70" parent="14" name="score">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="71" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

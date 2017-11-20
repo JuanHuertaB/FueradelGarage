@@ -6,7 +6,6 @@ import java.util.List;
 public class GbDataStore {
     private Connection connection;
     private UsersEntity usersEntity;
-    private ContractorEntity contractorEntity;
 
 
     public GbDataStore(Connection connection) {
@@ -35,20 +34,20 @@ public class GbDataStore {
         return connection == null ? null: getUsersEntity().findAll();
     }
 
-    public User createUser(String name,String password,String description, int score) {
+    public User createUser(String name,String firstName,String lastName,String password,String description,String video, int score) {
         return connection == null ?
                 null :
-                getUsersEntity().create(name,password,description,score);
+                getUsersEntity().create(name,firstName,lastName,password,description,video,score);
     }
 
-    public boolean updateUser(int id, String name,String password,String description) {
+    public boolean updateUser(int id, String name, String firstName, String lastName,String password,String description,String video) {
         return connection == null ?
                 false :
-                getUsersEntity().update(id, name,password,description);
+                getUsersEntity().update(id, name,firstName,lastName,password,description,video);
     }
 
     public boolean updateUser(User user) {
-        return updateUser(user.getId(), user.getName(), user.getPassword(), user.getDescription());
+        return updateUser(user.getId(), user.getName(),user.getFirstName(),user.getLastName(), user.getPassword(), user.getDescription(),user.getVideo());
     }
 
     public boolean eraseUser(int id) {
@@ -65,22 +64,6 @@ public class GbDataStore {
         return usersEntity;
     }
 
-    //CONTRACTORS
-    private ContractorEntity getContractorEntity() {
-        if(contractorEntity == null) {
-            contractorEntity = new ContractorEntity();
-            contractorEntity.setConnection(connection);
-        }
-        return contractorEntity;
-    }
-
-    public Contractor findCountryById(int id) {
-        if(connection == null) return null;
-        return getContractorEntity().findById(id, getUsersEntity());
-    }
-
-    public List<Contractor> findAllContractor() {
-        return connection == null ? null : getContractorEntity().findAll(getUsersEntity()); }
 }
 
 
