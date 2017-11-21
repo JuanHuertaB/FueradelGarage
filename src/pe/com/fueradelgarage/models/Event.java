@@ -2,27 +2,37 @@ package pe.com.fueradelgarage.models;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
 
 public class Event {
 
+    private int id;
     private int idUser;
     private String nameEvent;
-    private Date start;
-    private Date end;
+    private String start;
+    private String end;
     private String place;
     private String description;
 
     public Event() {
     }
 
-    public Event(int idUser, String nameEvent, Date start, Date end, String place, String description) {
+    public Event(int id, int idUser, String nameEvent, String start, String end, String place, String description) {
+        this.id = id;
         this.idUser = idUser;
         this.nameEvent = nameEvent;
         this.start = start;
         this.end = end;
         this.place = place;
         this.description = description;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public Event setId(int id) {
+        this.id = id;
+        return this;
     }
 
     public int getIdUser() {
@@ -43,20 +53,20 @@ public class Event {
         return this;
     }
 
-    public Date getStart() {
+    public String getStart() {
         return start;
     }
 
-    public Event setStart(Date start) {
+    public Event setStart(String start) {
         this.start = start;
         return this;
     }
 
-    public Date getEnd() {
+    public String getEnd() {
         return end;
     }
 
-    public Event setEnd(Date end) {
+    public Event setEnd(String end) {
         this.end = end;
         return this;
     }
@@ -82,10 +92,11 @@ public class Event {
     public static Event from(ResultSet rs) {
         try {
             return new Event(
-                    rs.getInt("user_id"),
+                    rs.getInt("id_events"),
+                    rs.getInt("users_id"),
                     rs.getString("name_events"),
-                    rs.getDate("start_date"),
-                    rs.getDate("end_date"),
+                    rs.getString("start_date"),
+                    rs.getString("end_date"),
                     rs.getString("place"),
                     rs.getString("description"));
         } catch (SQLException e) {
