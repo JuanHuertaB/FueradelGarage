@@ -64,47 +64,7 @@ public class GbDataStore {
         return usersEntity;
     }
 
-<<<<<<< HEAD
 
-    public Event findEventById(int id) {
-        return null;
-    }
-
-    public List<Event> findAllEvents() {
-        return null;
-    }
-
-    public boolean eraseEvent() {
-        return false;
-    }
-
-    public Event createEvent(String name, String password, String description, int score) {
-            return null;
-    }
-
-    public boolean updateEvent(int id, String name, String password, String description) {
-        return false;
-    }
-
-    //CONTRACTORS
-    private ContractorEntity getContractorEntity() {
-        if(contractorEntity == null) {
-            contractorEntity = new ContractorEntity();
-            contractorEntity.setConnection(connection);
-        }
-        return contractorEntity;
-    }
-
-    public Contractor findCountryById(int id) {
-        if(connection == null) return null;
-        return getContractorEntity().findById(id, getUsersEntity());
-    }
-
-    public List<Contractor> findAllContractor() {
-        return connection == null ? null : getContractorEntity().findAll(getUsersEntity()); }
-
-=======
->>>>>>> jhonatandev
 }
 
 
