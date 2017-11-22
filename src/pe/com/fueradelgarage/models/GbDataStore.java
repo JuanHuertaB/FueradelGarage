@@ -6,7 +6,8 @@ import java.util.List;
 public class GbDataStore {
     private Connection connection;
     private UsersEntity usersEntity;
-    private OffersEntity offersEntity;
+
+
 
     public GbDataStore(Connection connection) {
         this.connection = connection;
@@ -64,30 +65,7 @@ public class GbDataStore {
         return usersEntity;
     }
 
-    //OFFER
-    private OffersEntity getOfferEntity() {
-        if(offersEntity == null) {
-            offersEntity = new OffersEntity();
-            offersEntity.setConnection(connection);
-        }
-        return offersEntity;
-    }
 
-    public Offer createOffer(String title, String startTime, String endTime, String description) {
-        return null;
-    }
-
-    public Offer findOfferById(int idOffers) {
-        if(connection == null) return null;
-        return getOfferEntity().findById(idOffers);
-    }
-
-    public boolean eraseOffer() { return false;
-    }
-
-    public boolean updateOffer(int idOffers, String title, String startTime, String endTime, String description) {
-            return false;
-    }
 
 }
 
