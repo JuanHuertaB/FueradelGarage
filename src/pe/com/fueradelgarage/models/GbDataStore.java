@@ -6,7 +6,7 @@ import java.util.List;
 public class GbDataStore {
     private Connection connection;
     private UsersEntity usersEntity;
-
+    private OffersEntity offersEntity;
 
     public GbDataStore(Connection connection) {
         this.connection = connection;
@@ -64,47 +64,31 @@ public class GbDataStore {
         return usersEntity;
     }
 
-<<<<<<< HEAD
-
-    public Event findEventById(int id) {
-        return null;
-    }
-
-    public List<Event> findAllEvents() {
-        return null;
-    }
-
-    public boolean eraseEvent() {
-        return false;
-    }
-
-    public Event createEvent(String name, String password, String description, int score) {
-            return null;
-    }
-
-    public boolean updateEvent(int id, String name, String password, String description) {
-        return false;
-    }
-
-    //CONTRACTORS
-    private ContractorEntity getContractorEntity() {
-        if(contractorEntity == null) {
-            contractorEntity = new ContractorEntity();
-            contractorEntity.setConnection(connection);
+    //OFFER
+    private OffersEntity getOfferEntity() {
+        if(offersEntity == null) {
+            offersEntity = new OffersEntity();
+            offersEntity.setConnection(connection);
         }
-        return contractorEntity;
+        return offersEntity;
     }
 
-    public Contractor findCountryById(int id) {
+    public Offer createOffer(String title, String startTime, String endTime, String description) {
+        return null;
+    }
+
+    public Offer findOfferById(int idOffers) {
         if(connection == null) return null;
-        return getContractorEntity().findById(id, getUsersEntity());
+        return getOfferEntity().findById(idOffers);
     }
 
-    public List<Contractor> findAllContractor() {
-        return connection == null ? null : getContractorEntity().findAll(getUsersEntity()); }
+    public boolean eraseOffer() { return false;
+    }
 
-=======
->>>>>>> jhonatandev
+    public boolean updateOffer(int idOffers, String title, String startTime, String endTime, String description) {
+            return false;
+    }
+
 }
 
 
