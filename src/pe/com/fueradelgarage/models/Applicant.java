@@ -5,38 +5,30 @@ import java.sql.SQLException;
 
 public class Applicant {
 
-    private int id_applicants;
-    private int id_user;
+    private int idApplicants;
     private String name;
-    private String video_url;
+    private String video;
+    private String password;
+    private String description;
     private int rol_id;
+    private int score;
 
-    public Applicant(int id_applicants, int id_user, String name, String video_url, int rol_id) {
-        this.id_applicants = id_applicants;
-        this.id_user = id_user;
+    public Applicant(int idApplicants, String name, String video, String password, String description, int rol_id, int score) {
+        this.idApplicants = idApplicants;
         this.name = name;
-        this.video_url = video_url;
+        this.video = video;
+        this.password = password;
+        this.description = description;
         this.rol_id = rol_id;
+        this.score = score;
     }
 
-    public Applicant() {
+    public int getIdApplicants() {
+        return idApplicants;
     }
 
-    public int getId_applicants() {
-        return id_applicants;
-    }
-
-    public Applicant setId_applicants(int id_applicants) {
-        this.id_applicants = id_applicants;
-        return this;
-    }
-
-    public int getId_user() {
-        return id_user;
-    }
-
-    public Applicant setId_user(int id_user) {
-        this.id_user = id_user;
+    public Applicant setIdApplicants(int idApplicants) {
+        this.idApplicants = idApplicants;
         return this;
     }
 
@@ -49,12 +41,30 @@ public class Applicant {
         return this;
     }
 
-    public String getVideo_url() {
-        return video_url;
+    public String getVideo() {
+        return video;
     }
 
-    public Applicant setVideo_url(String video_url) {
-        this.video_url = video_url;
+    public Applicant setVideo(String video) {
+        this.video = video;
+        return this;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public Applicant setPassword(String password) {
+        this.password = password;
+        return this;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Applicant setDescription(String description) {
+        this.description = description;
         return this;
     }
 
@@ -64,6 +74,15 @@ public class Applicant {
 
     public Applicant setRol_id(int rol_id) {
         this.rol_id = rol_id;
+        return this;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public Applicant setScore(int score) {
+        this.score = score;
         return this;
     }
 
