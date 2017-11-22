@@ -7,6 +7,8 @@ public class GbDataStore {
     private Connection connection;
     private UsersEntity usersEntity;
 
+
+
     public GbDataStore(Connection connection) {
         this.connection = connection;
     }
@@ -62,6 +64,7 @@ public class GbDataStore {
         }
         return usersEntity;
     }
+
 
 
 }
