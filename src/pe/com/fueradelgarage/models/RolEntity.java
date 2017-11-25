@@ -52,7 +52,7 @@ public class RolEntity extends BaseEntity {
                 roles : null;
     }
 
-    public Rol create (String category){
+    public Rol create(String category){
         return create(category);
     }
 
