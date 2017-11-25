@@ -35,7 +35,7 @@
     </div>
 </nav>
 <div class="py-0 text-white bg-secondary">
-    <div  align="right" class="form-group">
+    <div class="form-group" align="right">
         <button type="submit">Sign out</button>
     </div>
     <div class="container">
@@ -65,7 +65,6 @@
         <div class="col-md-6">
             <h1 align="center" class="display-5" name="titulo de la oferta">Título</h1>
         </div>
-        <div class="col-md-6"> <label>Estado:</label> <label for="estado"></label></div>
     </div>
     <div class="container">
         <div class="row">
@@ -79,10 +78,7 @@
             </div>
             <div class="col-md-6" align="center">
                 <div class="form-group">
-                    <button class="col-md-6" type="submit">Detalles</button>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="col-md-6">Eliminar</button>
+                    <button type="submit" class="col-md-6">Detalles</button>
                 </div>
             </div>
         </div>
@@ -92,5 +88,4 @@
     </div>
 </div>
 </body>
-
 </html>
