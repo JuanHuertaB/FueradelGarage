@@ -22,7 +22,7 @@ public class ApplicantsDataStore {
         this.connection = connection;
     }
 
-    public Applicant findUserById(int id) {
+    public Applicant findApplicantsById(int id) {
         if(connection == null) return null;
         return getApplicantsEntity().findById(id);
     }
@@ -31,26 +31,26 @@ public class ApplicantsDataStore {
         return connection == null ? null: getApplicantsEntity().findAll();
     }
 
-    public User createApplicant(int id_applicants, int id_user, String name, String video_url, int rol_id) {
+    public Applicant createApplicant( String name, String video, String password, String description,int rol,int score) {
         return connection == null ?
                 null :
-                getUsersEntity().create(name,firstName,lastName,password,description,video,score);
+                getApplicantsEntity().create(name,video,password,description,rol,score);
     }
 
-    public boolean updateUser(int id, String name, String firstName, String lastName,String password,String description,String video) {
+    public boolean updateApplicant(int idApplicant, String name, String video, String password, String description) {
         return connection == null ?
                 false :
-                getUsersEntity().update(id, name,firstName,lastName,password,description,video);
+                getApplicantsEntity().update(idApplicant,name,video,password,description);
     }
 
-    public boolean updateUser(User user) {
-        return updateUser(user.getId(), user.getName(),user.getFirstName(),user.getLastName(), user.getPassword(), user.getDescription(),user.getVideo());
+    public boolean updateApplicant(Applicant applicant) {
+        return updateApplicant(applicant.getIdApplicants(),applicant.getName(),applicant.getVideo(),applicant.getPassword(),applicant.getDescription());
     }
 
     public boolean eraseUser(int id) {
         return connection == null ?
                 false :
-                getUsersEntity().erase(id);
+                getApplicantsEntity().erase(id);
     }
 
     private ApplicantsEntity getApplicantsEntity() {

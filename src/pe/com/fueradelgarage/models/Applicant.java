@@ -90,10 +90,12 @@ public class Applicant {
         try {
             return new Applicant(
                     rs.getInt("id_applicants"),
-                    rs.getInt("id_user"),
                     rs.getString("name"),
                     rs.getString("video_url"),
-                    rs.getInt("rol_id"));
+                    rs.getString("password"),
+                    rs.getString("description"),
+                    rs.getInt("rol_id"),
+                    rs.getInt("score"));
         } catch (SQLException e) {
             e.printStackTrace();
         }

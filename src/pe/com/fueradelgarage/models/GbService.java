@@ -55,68 +55,7 @@ public class GbService {
     public boolean updateUser(int id, String name,String firstName,String lastName, String password, String description,String video) {
         return dataStore.updateUser(id, name,firstName,lastName,password,description,video);
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    public boolean eraseUser(int id) {
-        return dataStore.eraseUser(id); }
 
-    public List<Agreement> findAllAgreements() {
-        return null;
-    }
-
-    public Agreement findAgreementsById(int id) {
-        return null;
-    }
-=======
-=======
->>>>>>> Develop_new
-=======
-
->>>>>>> Develop_new
-    public boolean eraseUser(int id) { return dataStore.eraseUser(id); }
-
-    public Event findEventById(int id ){return dataStore.findEventById(id);}
-
-    public List<Event> findAllEvents() { return dataStore.findAllEvents(); }
-
-    public boolean eraseEvent(int id) {return dataStore.eraseEvent();}
-
-    public Event createEvent(String name, String password, String description, int score) {
-    return dataStore.createEvent(name, password,description,score);}
-
-    public boolean updateEvent(int id, String name, String password, String description) {
-    return dataStore.updateEvent(id,name,password,description);}
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> Develop_new
-=======
-=======
-=======
->>>>>>> Develop_new
-
-
-// SERVICE OFFER
-
-    public Offer createOffer(String title, String startTime, String endTime, String description) {
-        return dataStore.createOffer(title,startTime,endTime,description);}
-
-    public Offer findOfferById(int idOffers) {
-        return dataStore.findOfferById(idOffers);
-    }
-
-    public boolean eraseOffer(int idOffers) { return dataStore.eraseOffer();
-    }
-
-    public boolean updateOffer(int idOffers, String title, String startTime, String endTime, String description) {
-        return dataStore.updateOffer(idOffers,title,startTime,endTime,description);
-    }
-
-<<<<<<< HEAD
->>>>>>> jhonatandev
->>>>>>> Develop_new
-=======
->>>>>>> Develop_new
 }
 
 
