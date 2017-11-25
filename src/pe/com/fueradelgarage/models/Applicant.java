@@ -7,19 +7,19 @@ public class Applicant {
 
     private int idApplicants;
     private String name;
-    private String video;
+    private String videoUrl;
     private String password;
     private String description;
-    private int rol_id;
+    private int rolId;
     private int score;
 
-    public Applicant(int idApplicants, String name, String video, String password, String description, int rol_id, int score) {
+    public Applicant(int idApplicants, String name, String videoUrl, String password, String description, int rol_id, int score) {
         this.idApplicants = idApplicants;
         this.name = name;
-        this.video = video;
+        this.videoUrl = videoUrl;
         this.password = password;
         this.description = description;
-        this.rol_id = rol_id;
+        this.rolId = rolId;
         this.score = score;
     }
 
@@ -41,12 +41,12 @@ public class Applicant {
         return this;
     }
 
-    public String getVideo() {
-        return video;
+    public String getVideoUrl() {
+        return videoUrl;
     }
 
-    public Applicant setVideo(String video) {
-        this.video = video;
+    public Applicant setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl;
         return this;
     }
 
@@ -68,12 +68,12 @@ public class Applicant {
         return this;
     }
 
-    public int getRol_id() {
-        return rol_id;
+    public int getRolId() {
+        return rolId;
     }
 
-    public Applicant setRol_id(int rol_id) {
-        this.rol_id = rol_id;
+    public Applicant setRolId(int rolId) {
+        this.rolId = rolId;
         return this;
     }
 

@@ -51,17 +51,17 @@ public class ApplicantsEntity extends BaseEntity{
 
     public Applicant create(Applicant applicant){
         return executeUpdate(String.format(
-                "INSERT INTO %s(id_applicants,name,video_url,password,description,rol_id,score) VALUES (%d,'%s','%s','%s','%s',%d,%d)",
-                getTableName(),applicant.getIdApplicants(),applicant.getName(),applicant.getVideo(),applicant.getPassword(),applicant.getDescription(),applicant.getRol_id(),applicant.getScore()))?
+                "INSERT INTO %s(name,video_url,password,description,rol_id,score) VALUES (%s,'%s','%s',%d,%d)",
+                getTableName(),applicant.getName(),applicant.getVideoUrl(),applicant.getPassword(),applicant.getDescription(),applicant.getRolId(),applicant.getScore()))?
                 applicant : null;
     }
 
-    public Applicant create (String name, String video, String password, String description,int rol,int score){
-        return create(0,name,video,password,description,rol,score);
+    public Applicant create (String name, String videoUrl, String password, String description, int rolId, int score){
+        return create(0,name,videoUrl,password,description,rolId,score);
     }
 
-    public Applicant create (int idApplicant, String name, String video, String password, String description,int rol,int score){
-        return create(new Applicant(idApplicant,name,video,password,description,rol,score));
+    public Applicant create (int id_applicants, String name, String videoUrl, String password, String description, int rolId, int score) {
+        return create(new Applicant(id_applicants, name, videoUrl, password, description, rolId, score));
     }
 
     // El usuario no actualiza update score
@@ -73,7 +73,7 @@ public class ApplicantsEntity extends BaseEntity{
     }
 
     public boolean update(Applicant applicant){
-        return update(applicant.getIdApplicants(), applicant.getName(),applicant.getVideo(),applicant.getPassword(),applicant.getDescription());
+        return update(applicant.getIdApplicants(), applicant.getName(),applicant.getVideoUrl(),applicant.getPassword(),applicant.getDescription());
     }
 
     public boolean erase(int idApplicants){

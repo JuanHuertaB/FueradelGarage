@@ -63,7 +63,7 @@ public class UsersController extends javax.servlet.http.HttpServlet {
             }
         }
 
-        if(method.equals("POST")) {
+      /*  if(method.equals("POST")) {
             // Create Action
             if(action.equals("create")) {
                 String name = request.getParameter("name");
@@ -91,6 +91,7 @@ public class UsersController extends javax.servlet.http.HttpServlet {
         }
 
         request.getRequestDispatcher(url).forward(request, response);
+    */
     }
 }
 

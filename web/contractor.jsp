@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<%@ taglib prefix="sb" uri="/struts-bootstrap-tags"%>
+<%@ taglib prefix="sB" uri="/struts-bootstrap-tags"%>
 
 <html>
 <head>
@@ -21,7 +21,7 @@
             <span class="navbar-toggler-icon"></span> </button>
         <div class="collapse navbar-collapse text-right justify-content-end" id="navbar2SupportedContent">
             <a href="index.jsp" class="btn btn-primary"><span class="glyphicon glyphicon-home"></span>&nbsp;Inicio</a>
-            <a href="Contactus.jsp" class="btn btn-primary"><span class="glyphicon glyphicon-envelope"></span>&nbsp;Contactanos</a>
+            <a href="contactus.jsp" class="btn btn-primary"><span class="glyphicon glyphicon-envelope"></span>&nbsp;Contactanos</a>
             <a class="btn navbar-btn ml-2 text-white btn-secondary"><i class="fa d-inline fa-lg fa-user-circle-o"></i>&nbsp;Login</a>
         </div>
     </div>
@@ -53,7 +53,7 @@
 
                                     <s:textfield label="Descripcion" cssClass="col-lg-12" name="user.description" placeholder="120 caracteres como maximo"/>
 
-                                    <s:textfield label="Video Url" cssClass="col-lg-12" name="user.video" placeholder="Direcion de video"/>
+                                    <s:textfield label="Video Url" cssClass="col-lg-12" name="user.video" placeholder="Direcion de videoUrl"/>
                                 <div class="text-right">
                                     <input type="reset" Class="btn btn-default" value="Borrar información">
                                     <s:submit cssClass="btn btn-primary" value="Registrarme" data-toggle="modal" data-target="#themodal" />

@@ -1,6 +1,8 @@
 <component name="libraryTable">
   <library name="struts2-bootstrap-plugin-2.5.2">
-    <CLASSES />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/struts2-core.jar!/" />
+    </CLASSES>
     <JAVADOC />
     <SOURCES />
   </library>

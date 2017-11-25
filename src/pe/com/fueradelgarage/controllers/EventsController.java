@@ -30,7 +30,7 @@ public class EventsController extends javax.servlet.http.HttpServlet{
     private void processRequest(String method, HttpServletRequest request, HttpServletResponse response)  throws javax.servlet.ServletException, IOException {
         String action = request.getParameter("action");
 
-        if(method.equals("GET")) {
+      /*  if(method.equals("GET")) {
             // Index Action
             if(action.equals("index")) {
                 List<Event> events = service.findAllEvents();
@@ -89,6 +89,7 @@ public class EventsController extends javax.servlet.http.HttpServlet{
         }
 
         request.getRequestDispatcher(url).forward(request, response);
+    */
     }
 
 }

@@ -90,17 +90,22 @@ CREATE TABLE IF NOT EXISTS `db_beater`.`applicants` (
   `id_user` INT(11) NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `video_url` VARCHAR(50) NULL,
+<<<<<<< HEAD
   `rol_id` INT NOT NULL,
   PRIMARY KEY (`idApplicants`),
+=======
+  `rolId` INT NOT NULL,
+  PRIMARY KEY (`id_applicants`),
+>>>>>>> 2240b6081543f69de41c6245d84e358dd67e0839
   INDEX `fk_applicants_user1_idx` (`id_user` ASC),
-  INDEX `fk_applicants_rol1_idx` (`rol_id` ASC),
+  INDEX `fk_applicants_rol1_idx` (`rolId` ASC),
   CONSTRAINT `fk_applicants_user1`
     FOREIGN KEY (`id_user`)
     REFERENCES `db_beater`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_applicants_rol1`
-    FOREIGN KEY (`rol_id`)
+    FOREIGN KEY (`rolId`)
     REFERENCES `db_beater`.`rol` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -114,8 +119,8 @@ CREATE TABLE IF NOT EXISTS `db_beater`.`events` (
   `id_events` INT NOT NULL AUTO_INCREMENT,
   `id_contractors` INT NOT NULL,
   `name_events` VARCHAR(45) NOT NULL,
-  `start_date` DATE NOT NULL,
-  `end_date` DATE NOT NULL,
+  `start_date` VARCHAR(15) NOT NULL,
+  `end_date`VARCHAR(15)NOT NULL,
   `place` VARCHAR(45) NOT NULL,
   `description` VARCHAR(120) NULL,
   PRIMARY KEY (`id_events`),
@@ -135,8 +140,8 @@ CREATE TABLE IF NOT EXISTS `db_beater`.`offers` (
   `id_offers` INT NOT NULL AUTO_INCREMENT,
   `id_events` INT NOT NULL,
   `tittle` VARCHAR(60) NOT NULL,
-  `start_time` TIME(6) NOT NULL,
-  `end_time` TIME(6) NOT NULL,
+  `start_time` VARCHAR(15) NOT NULL,
+  `end_time` VARCHAR(15) NOT NULL,
   `description` VARCHAR(120) NULL,
   PRIMARY KEY (`id_offers`),
   INDEX `fk_offers_events1_idx` (`id_events` ASC),

@@ -31,11 +31,12 @@ public class ApplicantsDataStore {
         return connection == null ? null: getApplicantsEntity().findAll();
     }
 
-    public Applicant createApplicant( String name, String video, String password, String description,int rol,int score) {
+    public Applicant createApplicant(int id_applicants, String name, String videoUrl, String password, String description, int rolId, int score) {
         return connection == null ?
                 null :
-                getApplicantsEntity().create(name,video,password,description,rol,score);
+                getApplicantsEntity().create(name,videoUrl,password,description,rolId,score);
     }
+
 
     public boolean updateApplicant(int idApplicant, String name, String video, String password, String description) {
         return connection == null ?
@@ -44,14 +45,9 @@ public class ApplicantsDataStore {
     }
 
     public boolean updateApplicant(Applicant applicant) {
-        return updateApplicant(applicant.getIdApplicants(),applicant.getName(),applicant.getVideo(),applicant.getPassword(),applicant.getDescription());
+        return updateApplicant(applicant.getIdApplicants(),applicant.getName(),applicant.getVideoUrl(),applicant.getPassword(),applicant.getDescription());
     }
 
-    public boolean eraseUser(int id) {
-        return connection == null ?
-                false :
-                getApplicantsEntity().erase(id);
-    }
 
     private ApplicantsEntity getApplicantsEntity() {
         if(applicantsEntity == null) {

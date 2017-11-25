@@ -11,9 +11,10 @@
         </action>
         <action name="edit" class="pe.com.fueradelgarage.actions.UserAction" method="edit">
             <result name="success">editUser.jsp</result>
+            <result name="input">listUsers.jsp</result>
         </action>
         <action name="updateUser" class="pe.com.fueradelgarage.actions.UserAction" method="update">
-            <result name="success">Prueba.jsp</result>
+            <result name="success">listUsers.jsp</result>
         </action>
         <action name="delete" class="pe.com.fueradelgarage.actions.UserAction" method="eliminar">
             <result name="success">Prueba.jsp</result>
