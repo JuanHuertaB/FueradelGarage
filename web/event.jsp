@@ -3,17 +3,16 @@
 <%@ taglib prefix="sb" uri="/struts-bootstrap-tags"%>
 
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css"> </head>
-    <!--Agregar estos estilos-->
+    <link rel="stylesheet" href="css/contractor.css" type="text/css">
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
     <title>FUERA DEL GARAGE</title>
 </head>
+
 <body style="background-color:#343a40;">
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
@@ -27,22 +26,46 @@
         </div>
     </div>
 </nav>
-<div class="py-5 bg-primary text-white">
+<div class="py-5" style="background-image: url(images/background-slide-inv.jpg);">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <img class="d-block img-fluid my-3" src="images/contactanos.png" width="60%"> </div>
-            <div class="col-md-6">
-                <h1>Contáctenos</h1>
-                <p>Nos encantaría saber de usted</p>
-                <form>
-                    <div class="form-group"> <label for="InputName">Nombre</label>
-                        <input type="text" class="form-control" id="InputName" placeholder="Dejanos tu nombre"> </div>
-                    <div class="form-group"> <label for="InputEmail1">Email&nbsp;</label>
-                        <input type="email" class="form-control" id="InputEmail1" placeholder="Ingresa tu email"> </div>
-                    <div class="form-group"> <label for="Textarea">Comentario</label> <textarea class="form-control" id="Textarea" rows="3" placeholder="Envianos cualquier duda o sugerencia que tengas"></textarea> </div>
-                    <button type="submit" class="btn btn-secondary">Submit</button>
-                </form>
+            <div class="align-self-center col-md-6 text-white">
+                <h2 class="text-center" contenteditable="true">Conecta con músicos, managers y empresas!</h2>
+                <h4 class="text-center" contenteditable="true"><p>Podras crear una convocatoria abierta para artistas nacionales, invitándolos a participar del proceso de evaluación. La plataforma te permitira hacer una selección responsable de forma agil, rapida, sencilla y amable, y conectar con los perfiles de cada una de las bandas. </p></h4>
+            </div>
+            <div class="col-md-6" id="book">
+                <div class="card">
+                    <div class="card text-white p-5 bg-dark">
+                        <div class="card-body">
+                            <h2 class="mb-4" contenteditable="true">Registro Eventos</h2>
+                            <s:form action="registrarEvent" cssClass="bs-example form-horizontal" theme="bootstrap">
+                                <img class="img-fluid d-block mx-auto" src="images/person.png" width="20%" height="20%">
+                                <br>
+                                <br>
+                                <fieldset>
+
+                                    <input type="text" name="event.id" value="${event.id}"/>
+
+                                    <s:textfield label="ID USER" cssClass="col-lg-12" name="event.idUser" placeholder="Ingrese id contartista"/>
+
+                                    <s:textfield label="Nombre del evento" cssClass="col-lg-12" name="event.nameEvent" placeholder="Ingrese nombre del evento"/>
+
+                                    <s:textfield label="Dia Inicio" cssClass="col-lg-12" name="event.start" placeholder="Fecha de inicio"/>
+
+                                    <s:textfield label="Dia Final" cssClass="col-lg-12" name="event.end" placeholder="Fecha de cierre"/>
+
+                                    <s:textfield label="Lugar" cssClass="col-lg-12" name="event.place" placeholder="¿En que lugar sera el evento?"/>
+
+                                    <s:textfield label="Descripcion" cssClass="col-lg-12" name="event.description" placeholder="120 caracteres como maximo"/>
+                                    <div class="text-right">
+                                        <input type="reset" Class="btn btn-default" value="Borrar información">
+                                        <s:submit cssClass="btn btn-primary" value="Registrarme" data-toggle="modal" data-target="#themodal" />
+                                    </div>
+                                </fieldset>
+                            </s:form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -76,5 +99,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </body>
-
 </html>

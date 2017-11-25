@@ -5,45 +5,45 @@ import java.sql.SQLException;
 
 public class Member {
 
-    private int id_member;
-    private int id_applicants;
-    private String name_me;
+    private int idMember;
+    private int idApplicants;
+    private String nameMenber;
     private String position;
 
-    public Member(int id_member, int id_applicants, String name_me, String position) {
-        this.id_member = id_member;
-        this.id_applicants = id_applicants;
-        this.name_me = name_me;
+    public Member(int idMember, int idApplicants, String nameMenber, String position) {
+        this.idMember = idMember;
+        this.idApplicants = idApplicants;
+        this.nameMenber = nameMenber;
         this.position = position;
     }
 
     public Member() {
     }
 
-    public int getId_member() {
-        return id_member;
+    public int getIdMember() {
+        return idMember;
     }
 
-    public Member setId_member(int id_member) {
-        this.id_member = id_member;
+    public Member setIdMember(int idMember) {
+        this.idMember = idMember;
         return this;
     }
 
-    public int getId_applicants() {
-        return id_applicants;
+    public int getIdApplicants() {
+        return idApplicants;
     }
 
-    public Member setId_applicants(int id_applicants) {
-        this.id_applicants = id_applicants;
+    public Member setIdApplicants(int idApplicants) {
+        this.idApplicants = idApplicants;
         return this;
     }
 
-    public String getName_me() {
-        return name_me;
+    public String getNameMenber() {
+        return nameMenber;
     }
 
-    public Member setName_me(String name_me) {
-        this.name_me = name_me;
+    public Member setNameMenber(String nameMenber) {
+        this.nameMenber = nameMenber;
         return this;
     }
 
