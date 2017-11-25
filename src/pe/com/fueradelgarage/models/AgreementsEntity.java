@@ -16,9 +16,9 @@ public class AgreementsEntity extends BaseEntity {
         super(connection, tableName);
     }
 
-    public Agreement findById(int id_offers){
+    public Agreement findById(int idOffers){
         return findByCriteria(
-                String.format("WHERE id_offers = %d",id_offers)).get(0);
+                String.format("WHERE id_offers = %d",idOffers)).get(0);
     }
 
     public List<Agreement> findByCriteria(String criteria){
@@ -47,37 +47,37 @@ public class AgreementsEntity extends BaseEntity {
     public Agreement create(Agreement agreement){
         return executeUpdate(String.format(
                 "INSERT INTO %s(id_offers,id_applicants,state,contractors_qualification,applicants_qualification) VALUES (%d,%d,'%s','%s','%s')",
-                getTableName(),agreement.getId_offers(),agreement.getId_applicants(),agreement.getState(),agreement.getContractors_qualification(),agreement.getApplicants_qualification()))?
+                getTableName(),agreement.getIdOffers(),agreement.getIdApplicants(),agreement.getState(),agreement.getContractorsQualification(),agreement.getApplicantsQualification()))?
                 agreement : null;
     }
 
-    public Agreement create (String state, String contractors_qualification, String applicants_qualification){
-        return create(0,0,state,contractors_qualification,applicants_qualification);
+    public Agreement create (String state, String contractorsQualification, String applicantsQualification){
+        return create(0,0,state,contractorsQualification,applicantsQualification);
     }
 
-    public Agreement create (int id_offers, int id_applicants, String state, String contractors_qualification, String applicants_qualification){
-        return create(new Agreement(id_offers, id_applicants ,state,contractors_qualification,applicants_qualification));
+    public Agreement create (int idOffers, int idApplicants, String state, String contractorsQualification, String applicantsQualification){
+        return create(new Agreement(idOffers, idApplicants ,state,contractorsQualification,applicantsQualification));
     }
 
     // El usuario no actualiza update score
     // user no update score
 
-    public  boolean update(int id_offers, int id_applicants, String state){
+    public  boolean update(int idOffers, int idApplicants, String state){
         return executeUpdate(String.format(
-                "UPDATE %s SET id_applicants = %d, state = '%s' WHERE id_offers = %d",getTableName(),id_applicants,state,id_offers));
+                "UPDATE %s SET id_applicants = %d, state = '%s' WHERE id_offers = %d",getTableName(),idApplicants,state,idOffers));
     }
 
     public boolean update(Agreement agreement){
-        return update(agreement.getId_offers(),agreement.getId_applicants(),agreement.getState());
+        return update(agreement.getIdOffers(),agreement.getIdApplicants(),agreement.getState());
     }
 
-    public boolean erase(int id_offers){
+    public boolean erase(int idOffers){
         return executeUpdate(String.format("DELETE FROM %s WHERE id_offers=%d",
-                getTableName(),id_offers));
+                getTableName(),idOffers));
     }
 
     public boolean erase(Agreement agreement){
         return executeUpdate(String.format("DELETE FROM %s WHERE id_offers=%d",
-                getTableName(),agreement.getId_offers()));
+                getTableName(),agreement.getIdOffers()));
     }
 }
