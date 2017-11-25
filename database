@@ -86,12 +86,12 @@ ENGINE = InnoDB;
 -- Table `db_beater`.`applicants`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_beater`.`applicants` (
-  `id_applicants` INT NOT NULL AUTO_INCREMENT,
+  `idApplicants` INT NOT NULL AUTO_INCREMENT,
   `id_user` INT(11) NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `video_url` VARCHAR(50) NULL,
   `rol_id` INT NOT NULL,
-  PRIMARY KEY (`id_applicants`),
+  PRIMARY KEY (`idApplicants`),
   INDEX `fk_applicants_user1_idx` (`id_user` ASC),
   INDEX `fk_applicants_rol1_idx` (`rol_id` ASC),
   CONSTRAINT `fk_applicants_user1`
@@ -153,20 +153,20 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_beater`.`agreements` (
   `id_offers` INT NOT NULL,
-  `id_applicants` INT NOT NULL,
+  `idApplicants` INT NOT NULL,
   `state` VARCHAR(15) NOT NULL,
   `contractors_qualification` INT NOT NULL,
   `applicants_qualification` INT NOT NULL,
   INDEX `fk_agreements_offers1_idx` (`id_offers` ASC),
-  INDEX `fk_agreements_applicants1_idx` (`id_applicants` ASC),
+  INDEX `fk_agreements_applicants1_idx` (`idApplicants` ASC),
   CONSTRAINT `fk_agreements_offers1`
     FOREIGN KEY (`id_offers`)
     REFERENCES `db_beater`.`offers` (`id_offers`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_agreements_applicants1`
-    FOREIGN KEY (`id_applicants`)
-    REFERENCES `db_beater`.`applicants` (`id_applicants`)
+    FOREIGN KEY (`idApplicants`)
+    REFERENCES `db_beater`.`applicants` (`idApplicants`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -176,15 +176,15 @@ ENGINE = InnoDB;
 -- Table `db_beater`.`members`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_beater`.`members` (
-  `id_member` INT NOT NULL AUTO_INCREMENT,
-  `id_applicants` INT NOT NULL,
-  `name_me` VARCHAR(50) NOT NULL,
+  `idMember` INT NOT NULL AUTO_INCREMENT,
+  `idApplicants` INT NOT NULL,
+  `nameMenber` VARCHAR(50) NOT NULL,
   `position` VARCHAR(30) NULL,
-  PRIMARY KEY (`id_member`),
-  INDEX `fk_members_applicants1_idx` (`id_applicants` ASC),
+  PRIMARY KEY (`idMember`),
+  INDEX `fk_members_applicants1_idx` (`idApplicants` ASC),
   CONSTRAINT `fk_members_applicants1`
-    FOREIGN KEY (`id_applicants`)
-    REFERENCES `db_beater`.`applicants` (`id_applicants`)
+    FOREIGN KEY (`idApplicants`)
+    REFERENCES `db_beater`.`applicants` (`idApplicants`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
