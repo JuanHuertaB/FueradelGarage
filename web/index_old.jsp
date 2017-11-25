@@ -97,8 +97,8 @@
                             <s:textfield label="Descripción" name="user.description"
                                          cssClass="col-lg-11" placeholder="120 carateres como maximo" />
 
-                            <s:textfield label="Video Url" name="user.video"
-                                         cssClass="col-lg-11" placeholder="Ingrese la url de su video" />
+                            <s:textfield label="Video Url" name="user.videoUrl"
+                                         cssClass="col-lg-11" placeholder="Ingrese la url de su videoUrl" />
 
 
                             <div class="col-lg-9 col-lg-offset-3">

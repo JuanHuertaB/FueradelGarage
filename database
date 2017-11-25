@@ -90,17 +90,17 @@ CREATE TABLE IF NOT EXISTS `db_beater`.`applicants` (
   `id_user` INT(11) NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `video_url` VARCHAR(50) NULL,
-  `rol_id` INT NOT NULL,
+  `rolId` INT NOT NULL,
   PRIMARY KEY (`id_applicants`),
   INDEX `fk_applicants_user1_idx` (`id_user` ASC),
-  INDEX `fk_applicants_rol1_idx` (`rol_id` ASC),
+  INDEX `fk_applicants_rol1_idx` (`rolId` ASC),
   CONSTRAINT `fk_applicants_user1`
     FOREIGN KEY (`id_user`)
     REFERENCES `db_beater`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_applicants_rol1`
-    FOREIGN KEY (`rol_id`)
+    FOREIGN KEY (`rolId`)
     REFERENCES `db_beater`.`rol` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)

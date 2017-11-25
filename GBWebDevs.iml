@@ -26,15 +26,11 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 5 Local" level="application_server_libraries" />
-    <orderEntry type="library" name="Struts 2-2.5.13" level="project" />
-
-
-
+    <orderEntry type="library" exported="" scope="PROVIDED" name="GlassFish 5 Local" level="application_server_libraries" />
+    <orderEntry type="library" exported="" name="Struts 2-2.5.13" level="project" />
     <orderEntry type="library" exported="" name="Java EE 6-Java EE 6" level="project" />
-    <orderEntry type="library" name="struts2-bootstrap-plugin-2.5.2" level="project" />
-
+    <orderEntry type="library" exported="" name="struts2-bootstrap-plugin-2.5.2" level="project" />
   </component>
 </module>

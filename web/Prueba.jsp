@@ -63,7 +63,7 @@
                         <td><c:out value="${user.lastName}"/></td>
                         <td><c:out value="${user.password}"/></td>
                         <td><c:out value="${user.description}"/></td>
-                        <td><c:out value="${user.video}"/></td>
+                        <td><c:out value="${user.videoUrl}"/></td>
                         <td><c:out value="${user.score}"/></td>
 
                         <td><a href="<s:url action="edit"><s:param name="user.id"><c:out value="${user.id}"/></s:param></s:url>" class="btn btn-primary btn-xs">Editar</a></td>

@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<%@ taglib prefix="sb" uri="/struts-bootstrap-tags"%>
+<%@ taglib prefix="sB" uri="/struts-bootstrap-tags"%>
 
 <html>
 <head>
@@ -53,7 +53,7 @@
 
                                     <s:textfield label="Descripcion" cssClass="col-lg-12" name="user.description" placeholder="120 caracteres como maximo"/>
 
-                                    <s:textfield label="Video Url" cssClass="col-lg-12" name="user.video" placeholder="Direcion de video"/>
+                                    <s:textfield label="Video Url" cssClass="col-lg-12" name="user.video" placeholder="Direcion de videoUrl"/>
                                 <div class="text-right">
                                     <input type="reset" Class="btn btn-default" value="Borrar información">
                                     <s:submit cssClass="btn btn-primary" value="Registrarme" data-toggle="modal" data-target="#themodal" />

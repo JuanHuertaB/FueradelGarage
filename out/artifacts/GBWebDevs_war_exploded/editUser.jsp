@@ -43,7 +43,7 @@
                                 <input type="text" name="user.description" id="user.description" value="${user.description}"/>
 
                                 <label for="name">Video Url</label>
-                                <input type="text" name="user.video" id="user.video" value="${user.video}"/>
+                                <input type="text" name="user.videoUrl" id="user.videoUrl" value="${user.videoUrl}"/>
 
                                 <input type="submit"/>
 

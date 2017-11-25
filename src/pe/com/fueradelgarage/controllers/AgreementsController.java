@@ -61,7 +61,7 @@ public class AgreementsController extends javax.servlet.http.HttpServlet {
             }
         }
 
-        if(method.equals("POST")) {
+       /* if(method.equals("POST")) {
             // Create Action
             if(action.equals("create")) {
                 String state = request.getParameter("state");
@@ -87,7 +87,7 @@ public class AgreementsController extends javax.servlet.http.HttpServlet {
                 url = "listUsers.jsp";
             }
         }
-
+*/
         request.getRequestDispatcher(url).forward(request, response);
     }
 

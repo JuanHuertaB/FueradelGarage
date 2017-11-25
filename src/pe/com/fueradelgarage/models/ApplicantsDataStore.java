@@ -31,27 +31,27 @@ public class ApplicantsDataStore {
         return connection == null ? null: getApplicantsEntity().findAll();
     }
 
-    public User createApplicant(int id_applicants, int id_user, String name, String video_url, int rol_id) {
+    public Applicant createApplicant(int id_applicants, String name, String videoUrl, String password, String description, int rolId, int score) {
         return connection == null ?
                 null :
-                getUsersEntity().create(name,firstName,lastName,password,description,video,score);
+                getApplicantsEntity().create(name,videoUrl,password,description,rolId,score);
     }
 
-    public boolean updateUser(int id, String name, String firstName, String lastName,String password,String description,String video) {
+  /*  public boolean updateUser(int id, String name, String firstName, String lastName,String password,String description,String video) {
         return connection == null ?
                 false :
-                getUsersEntity().update(id, name,firstName,lastName,password,description,video);
-    }
+                getUserEntity().update(id, name,firstName,lastName,password,description,video);
+    }*/
 
-    public boolean updateUser(User user) {
+   /* public boolean updateUser(User user) {
         return updateUser(user.getId(), user.getName(),user.getFirstName(),user.getLastName(), user.getPassword(), user.getDescription(),user.getVideo());
-    }
+    }*/
 
-    public boolean eraseUser(int id) {
+  /*  public boolean eraseUser(int id) {
         return connection == null ?
                 false :
-                getUsersEntity().erase(id);
-    }
+                getApplicantsEntity().erase(id);
+    }*/
 
     private ApplicantsEntity getApplicantsEntity() {
         if(applicantsEntity == null) {
