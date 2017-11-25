@@ -65,13 +65,13 @@
         <div class="row">
             <div class="col-md-6" style="transition: all 0.25s;">
                 <form style="opacity: 10;">
-                    <div class="form-group"> <label for="InputName">Día de inicio:</label> </div>
-                    <div> <label for="InputName"></label> </div>
-                    <div class="form-group"> <label for="InputEmail1">Día de término:</label> </div>
-                    <div><label for="InputEmail1"></label> </div>
-                    <div class="form-group"> <label for="InputName">Lugar</label> </div>
+                    <div class="form-group"> <label for="InputDiaInicio">Día de inicio:</label> </div>
+                    <div> <label for="DiaInicio"></label> </div>
+                    <div class="form-group"> <label for="InputDiaTermino">Día de término:</label> </div>
+                    <div><label for="DiaTermino"></label> </div>
+                    <div class="form-group"> <label for="InputLugar">Lugar</label> </div>
                     <div>
-                        <div><label for="InputEmail1"></label> </div>
+                        <div><label for="Lugar"></label> </div>
                     </div>
                 </form>
             </div>
