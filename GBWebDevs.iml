@@ -30,17 +30,11 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="GlassFish 5 Local" level="application_server_libraries" />
     <orderEntry type="library" name="Struts 2-2.5.13" level="project" />
-<<<<<<< HEAD
 
-
-    <orderEntry type="library" exported="" name="Java EE 6-Java EE 6" level="project" />
-    <orderEntry type="library" name="struts2-bootstrap-plugin-2.5.2" level="project" />
-
-=======
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
 
     <orderEntry type="library" exported="" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="library" name="struts2-bootstrap-plugin-2.5.2" level="project" />
->>>>>>> eb43dc2e887c5a80c81f62de8084d94b78e4de6e
+
   </component>
 </module>
