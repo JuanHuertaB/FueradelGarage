@@ -40,35 +40,32 @@
                     <thead>
 
                     <th>Id</th>
-                    <th>Nickname</th>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Password</th>
-                    <th>Descripción</th>
-                    <th>Video URL</th>
-                    <th>Score</th>
+                    <th>Id User</th>
+                    <th>Nombre evento</th>
+                    <th>Inicio</th>
+                    <th>Final</th>
+                    <th>Lugar</th>
+                    <th>Descripcion</th>
                     <th>Edit</th>
                     <th>Delete</th>
                     </thead>
                     <tbody>
 
-                    <jsp:useBean id="service" class="pe.com.fueradelgarage.models.GbService"/>
-                    <c:forEach var="user" items="${service.findAllUsers()}">
+                    <jsp:useBean id="service" class="pe.com.fueradelgarage.models.EventService"/>
+                    <c:forEach var="event" items="${service.findAllEvents()}">
 
                     <tbody>
                     <tr>
-                        <td><c:out value="${user.id}"/></td>
-                        <td><c:out value="${user.name}"/></td>
-                        <td><c:out value="${user.firstName}"/></td>
-                        <td><c:out value="${user.lastName}"/></td>
-                        <td><c:out value="${user.password}"/></td>
-                        <td><c:out value="${user.description}"/></td>
-                        <td><c:out value="${user.video}"/></td>
-                        <td><c:out value="${user.score}"/></td>
+                        <td><c:out value="${event.id}"/></td>
+                        <td><c:out value="${event.idUser}"/></td>
+                        <td><c:out value="${event.nameEvent}"/></td>
+                        <td><c:out value="${event.start}"/></td>
+                        <td><c:out value="${event.end}"/></td>
+                        <td><c:out value="${event.place}"/></td>
+                        <td><c:out value="${event.description}"/></td>
 
-                        <td><a href="<s:url action="edit"><s:param name="user.id"><c:out value="${user.id}"/></s:param></s:url>" class="btn btn-success btn-xs">Crear Evento</a></td>
-                        <td><a href="<s:url action="edit"><s:param name="user.id"><c:out value="${user.id}"/></s:param></s:url>" class="btn btn-primary btn-xs">Editar</a></td>
-                        <td><a href="delete.action?user.id=<c:out value="${user.id}"/>"><button class="btn btn-danger btn-xs">Delete</button></a></td>
+                        <td><a href="<s:url action="editEvent"><s:param name="event.id"><c:out value="${event.id}"/></s:param></s:url>" class="btn btn-primary btn-xs">Editar</a></td>
+                        <td><a href="deleteEvent.action?event.id=<c:out value="${event.id}"/>"><button class="btn btn-danger btn-xs">Delete</button></a></td>
 
                     </tr>
                     </tbody>
