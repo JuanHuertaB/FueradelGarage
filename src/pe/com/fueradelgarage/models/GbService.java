@@ -56,6 +56,7 @@ public class GbService {
         return dataStore.updateUser(id, name,firstName,lastName,password,description,video);
     }
 
+
     public boolean eraseUser(int id) {
         return dataStore.eraseUser(id); }
 
@@ -81,7 +82,7 @@ public class GbService {
 */
 // SERVICE OFFER
 
-    
+
 
 }
 

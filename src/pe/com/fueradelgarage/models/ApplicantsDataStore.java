@@ -22,7 +22,7 @@ public class ApplicantsDataStore {
         this.connection = connection;
     }
 
-    public Applicant findUserById(int id) {
+    public Applicant findApplicantsById(int id) {
         if(connection == null) return null;
         return getApplicantsEntity().findById(id);
     }
@@ -37,21 +37,17 @@ public class ApplicantsDataStore {
                 getApplicantsEntity().create(name,videoUrl,password,description,rolId,score);
     }
 
-  /*  public boolean updateUser(int id, String name, String firstName, String lastName,String password,String description,String video) {
+
+    public boolean updateApplicant(int idApplicant, String name, String video, String password, String description) {
         return connection == null ?
                 false :
-                getUserEntity().update(id, name,firstName,lastName,password,description,video);
-    }*/
+                getApplicantsEntity().update(idApplicant,name,video,password,description);
+    }
 
-   /* public boolean updateUser(User user) {
-        return updateUser(user.getId(), user.getName(),user.getFirstName(),user.getLastName(), user.getPassword(), user.getDescription(),user.getVideo());
-    }*/
+    public boolean updateApplicant(Applicant applicant) {
+        return updateApplicant(applicant.getIdApplicants(),applicant.getName(),applicant.getVideoUrl(),applicant.getPassword(),applicant.getDescription());
+    }
 
-  /*  public boolean eraseUser(int id) {
-        return connection == null ?
-                false :
-                getApplicantsEntity().erase(id);
-    }*/
 
     private ApplicantsEntity getApplicantsEntity() {
         if(applicantsEntity == null) {

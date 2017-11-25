@@ -51,7 +51,7 @@ public class ApplicantsEntity extends BaseEntity{
 
     public Applicant create(Applicant applicant){
         return executeUpdate(String.format(
-                "INSERT INTO %s(name,video_url,password,description,rolId,score) VALUES (%s,'%s','%s',%d,%d)",
+                "INSERT INTO %s(name,video_url,password,description,rol_id,score) VALUES (%s,'%s','%s',%d,%d)",
                 getTableName(),applicant.getName(),applicant.getVideoUrl(),applicant.getPassword(),applicant.getDescription(),applicant.getRolId(),applicant.getScore()))?
                 applicant : null;
     }
@@ -60,25 +60,25 @@ public class ApplicantsEntity extends BaseEntity{
         return create(0,name,videoUrl,password,description,rolId,score);
     }
 
-    public Applicant create (int id_applicants, String name, String videoUrl, String password, String description, int rolId, int score){
-        return create(new Applicant(id_applicants,name,videoUrl,password,description,rolId,score));
+    public Applicant create (int id_applicants, String name, String videoUrl, String password, String description, int rolId, int score) {
+        return create(new Applicant(id_applicants, name, videoUrl, password, description, rolId, score));
     }
 
     // El usuario no actualiza update score
     // user no update score
 
-    public  boolean update(int id_applicants, String name, String video_url,String password,String description){
+    public  boolean update(int idApplicant, String name, String video, String password, String description){
         return executeUpdate(String.format(
-                "UPDATE %s SET name = '%s', video_url = '%s', password = '%s', description = '%s' WHERE id_applicants = %d",getTableName(),name,video_url,password,description,id_applicants));
+                "UPDATE %s SET name = '%s', video_url = '%s',password='%s',description='%s', WHERE id_applicants = %d",getTableName(),name,video,password,description,idApplicant));
     }
 
     public boolean update(Applicant applicant){
         return update(applicant.getIdApplicants(), applicant.getName(),applicant.getVideoUrl(),applicant.getPassword(),applicant.getDescription());
     }
 
-    public boolean erase(int id_applicants){
+    public boolean erase(int idApplicants){
         return executeUpdate(String.format("DELETE FROM %s WHERE id_applicants=%d",
-                getTableName(),id_applicants));
+                getTableName(),idApplicants));
     }
 
     public boolean erase(Applicant applicant){

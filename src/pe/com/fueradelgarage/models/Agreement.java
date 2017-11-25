@@ -5,38 +5,38 @@ import java.sql.SQLException;
 
 public class Agreement {
 
-    private int id_offers;
-    private int id_applicants;
+    private int idOffers;
+    private int idApplicants;
     private String state;
-    private String contractors_qualification;
-    private String applicants_qualification;
+    private String contractorsQualification;
+    private String applicantsQualification;
 
-    public Agreement(int id_offers, int id_applicants, String state, String contractors_qualification, String applicants_qualification) {
-        this.id_offers = id_offers;
-        this.id_applicants = id_applicants;
+    public Agreement(int idOffers, int idApplicants, String state, String contractorsQualification, String applicantsQualification) {
+        this.idOffers = idOffers;
+        this.idApplicants = idApplicants;
         this.state = state;
-        this.contractors_qualification = contractors_qualification;
-        this.applicants_qualification = applicants_qualification;
+        this.contractorsQualification = contractorsQualification;
+        this.applicantsQualification = applicantsQualification;
     }
 
     public Agreement() {
     }
 
-    public int getId_offers() {
-        return id_offers;
+    public int getIdOffers() {
+        return idOffers;
     }
 
-    public Agreement setId_offers(int id_offers) {
-        this.id_offers = id_offers;
+    public Agreement setIdOffers(int idOffers) {
+        this.idOffers = idOffers;
         return this;
     }
 
-    public int getId_applicants() {
-        return id_applicants;
+    public int getIdApplicants() {
+        return idApplicants;
     }
 
-    public Agreement setId_applicants(int id_applicants) {
-        this.id_applicants = id_applicants;
+    public Agreement setIdApplicants(int idApplicants) {
+        this.idApplicants = idApplicants;
         return this;
     }
 
@@ -49,21 +49,21 @@ public class Agreement {
         return this;
     }
 
-    public String getContractors_qualification() {
-        return contractors_qualification;
+    public String getContractorsQualification() {
+        return contractorsQualification;
     }
 
-    public Agreement setContractors_qualification(String contractors_qualification) {
-        this.contractors_qualification = contractors_qualification;
+    public Agreement setContractorsQualification(String contractorsQualification) {
+        this.contractorsQualification = contractorsQualification;
         return this;
     }
 
-    public String getApplicants_qualification() {
-        return applicants_qualification;
+    public String getApplicantsQualification() {
+        return applicantsQualification;
     }
 
-    public Agreement setApplicants_qualification(String applicants_qualification) {
-        this.applicants_qualification = applicants_qualification;
+    public Agreement setApplicantsQualification(String applicantsQualification) {
+        this.applicantsQualification = applicantsQualification;
         return this;
     }
 
@@ -81,5 +81,5 @@ public class Agreement {
         }
         return null;
     }
-    //Probando commmit , solo es un mensaje
+
 }
